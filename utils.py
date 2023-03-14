@@ -19,5 +19,5 @@ def col_func(data):
         fov.append(pt[-1])
         imgs.append(pt[0])
     targetCameras = FoVPerspectiveCameras(fov=fov, R=torch.tensor(R), T=torch.tensor(T))
-    imgs = np.array(imgs)
+    imgs = torch.tensor(np.array(imgs))
     return targetCameras, imgs

@@ -24,7 +24,7 @@ class NeRFDataset(Dataset):
     def __getitem__(self, idx):
         frame = self.trainFrames[idx]
         imgPath = osp.join(self.dataDir, frame["file_path"][2:]) + ".png"
-        img = np.array(Image.open(imgPath))
+        img = np.array(Image.open(imgPath), dtype = np.float32)
         rotation = frame["rotation"]
         P = np.array(frame["transform_matrix"])
         R = P[0:3,0:3] #np.block(P, (0,0), (3,3))
