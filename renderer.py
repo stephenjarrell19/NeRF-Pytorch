@@ -1,7 +1,7 @@
 import torch
 from pytorch3d.renderer.implicit.renderer import ImplicitRenderer
 
-class renderer(ImplicitRenderer):
+class Renderer(ImplicitRenderer):
     def forward(self, cameras, volumetric_function, **kwargs):
         """
         Render a batch of images using a volumetric function
